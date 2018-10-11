@@ -10,7 +10,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div className='wraper'>
+            <div >
                    <Row>
                        <Col span={4}>
                            <Navleft></Navleft>

@@ -2,7 +2,7 @@ export function getdata(niux){
     let data = new Date(niux)
 
     function change(str){
-        return str > 10 ? str : (`0${str}`)
+        return str >= 10 ? str : (`0${str}`)
     }
     let year = change(data.getFullYear());
     let mon =change((data.getMonth()+1));
