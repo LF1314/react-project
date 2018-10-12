@@ -5,6 +5,20 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## Table of Contents
 
+
+
+运用react全家桶  + [Ant Design](https://ant.design/components/menu-cn/) 实现共享单车后管理
+项目运行
+
+主要包 [echarts-for-react](https://www.npmjs.com/package/echarts-for-react)  图形绘制 
+           
+ [ 百度地图javascripAPI](http://lbsyun.baidu.com/index.php?title=jspopular)
+        
+
+npm i ;
+
+npm run dev
+
 - [Updating to New Releases](#updating-to-new-releases)
 - [Sending Feedback](#sending-feedback)
 - [Folder Structure](#folder-structure)

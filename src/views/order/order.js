@@ -143,6 +143,17 @@ class Order extends Component {
         visible: false,
       })  
 }
+//查看订单详情页
+ Cometoorderdatil=()=>{
+  if(!this.state.selectedrowsv[0])
+  {
+       message.info('您还没有选择用户！')
+  }else{
+    let id = this.state.selectedrowsv[0].id
+    console.log(id)
+    window.open(`/#/order/orderdatil/${id}`)
+  }
+ }
 
   render() {
     const  pagination = {
@@ -207,7 +218,7 @@ class Order extends Component {
         </Card>
         <Card className='lokdetail' >
             <div>
-                <Button type='primary'>订单详情</Button>
+                <Button type='primary' onClick = {this.Cometoorderdatil}>订单详情</Button>
                 <Button type='primary' className='ml20' onClick={this.getoverorder}>结束订单</Button>
             </div>
         </Card>

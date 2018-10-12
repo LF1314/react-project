@@ -4,9 +4,11 @@ import './header.less'
 import axios from 'axios'
 import{ getdata } from '../../until/until'
 class Header extends Component {
+
     state = {  
         time:'',
-        weather:''
+        weather:'',
+        ishow:false
     };
     changetime=()=>{
         let data = new Date().getTime()
@@ -26,15 +28,39 @@ class Header extends Component {
        })
     
    }
+   //判断用户是否进入了详情页面
+    cahngepage=()=>{
+        if(this.props.children){
+            this.setState({
+                ishow:true
+            },()=>{
+                console.log(this.state.ishow)
+            })
+        }
+       
+    }
+    // 改变class属性
+    chngeclass=()=>{
+        if(this.state.ishow){
+            return 'commeto_detail header-eraper'
+        }else{
+            return 'header-eraper'
+        }
+    }
+
    componentWillMount(){
        this.getweather()
        setInterval(()=>{
            this.changetime()
        },1000)
+       this.cahngepage()
    }
     render() {
         return (
-            <div className='header-eraper'>
+            <div className= {this.chngeclass()} >
+                <div className='fl title'>
+                    {this.props.children}
+                </div>
                 <div className=' clearfix'>
                        <div className='username fr'>
                              小强

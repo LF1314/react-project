@@ -5,9 +5,12 @@ import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
 import {Row , Col} from 'antd'
 import './index.less'
+import {connect} from 'react-redux'
 class Home extends Component {
     state = {  };
-
+     componentWillMount(){
+        console.log(this.props)
+     }
     render() {
         return (
             <div >
@@ -18,7 +21,7 @@ class Home extends Component {
                        <Col span={20}>
                             <Header></Header>
                             <div className='breadcord'>
-                               首页
+                               {this.props.menutext}
                             </div>
                             <div className='centerwraper'>
                             {this.props.children}
@@ -32,7 +35,14 @@ class Home extends Component {
     }
 }
 
-export default Home;
+
+export default connect(
+   (state)=>{
+        return{
+            menutext:state.menutext
+        }
+    }
+)(Home);
 
 
 

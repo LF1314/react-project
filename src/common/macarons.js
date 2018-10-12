@@ -1,198 +1,212 @@
-(function (root, factory) {
-    if (typeof define === 'function' ) {
-        // AMD. Register as an anonymous module.
-    
-    } else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
-        // CommonJS
-        factory(exports, require('echarts'));
-    } else {
-        // Browser globals
-        factory({}, root.echarts);
-    }
-}(this, function (exports, echarts) {
-    var log = function (msg) {
-        if (typeof console !== 'undefined') {
-            console && console.error && console.error(msg);
+
+export default {
+    "color": [
+        "#f9c700",
+        "#ff5400",
+        "#6699cc",
+        "#9cb3c5",
+        "#e0e6ec",
+        "#666666",
+        "#787464",
+        "#cc7e63",
+        "#724e58",
+        "#4b565b"
+    ],
+    "backgroundColor": "#ffffff",
+    "textStyle": {},
+    "title": {
+        "textStyle": {
+            "color": "#cccccc"
+        },
+        "subtextStyle": {
+            "color": "#cccccc"
         }
-    };
-    if (!echarts) {
-        log('ECharts is not Loaded');
-        return;
-    }
-
-    var colorPalette = [
-        '#2ec7c9','#b6a2de','#5ab1ef','#ffb980','#d87a80',
-        '#8d98b3','#e5cf0d','#97b552','#95706d','#dc69aa',
-        '#07a2a4','#9a7fd1','#588dd5','#f5994e','#c05050',
-        '#59678c','#c9ab00','#7eb00a','#6f5553','#c14089'
-    ];
-
-
-    var theme = {
-        color: colorPalette,
-
-        title: {
-            textStyle: {
-                fontWeight: 'normal',
-                color: '#008acd'
+    },
+    "line": {
+        "itemStyle": {
+            "normal": {
+                "borderWidth": 1
             }
         },
-
-        visualMap: {
-            itemWidth: 15,
-            color: ['#5ab1ef','#e0ffff']
-        },
-
-        toolbox: {
-            iconStyle: {
-                normal: {
-                    borderColor: colorPalette[0]
-                }
+        "lineStyle": {
+            "normal": {
+                "width": 2
             }
         },
-
-        tooltip: {
-            backgroundColor: 'rgba(50,50,50,0.5)',
-            axisPointer : {
-                type : 'line',
-                lineStyle : {
-                    color: '#008acd'
-                },
-                crossStyle: {
-                    color: '#008acd'
-                },
-                shadowStyle : {
-                    color: 'rgba(200,200,200,0.2)'
-                }
-            }
-        },
-
-        dataZoom: {
-            dataBackgroundColor: '#efefff',
-            fillerColor: 'rgba(182,162,222,0.2)',
-            handleColor: '#008acd'
-        },
-
-        grid: {
-            borderColor: '#eee'
-        },
-
-        categoryAxis: {
-            axisLine: {
-                lineStyle: {
-                    color: '#008acd'
-                }
+        "symbolSize": "10",
+        "symbol": "emptyCircle",
+        "smooth": false
+    },
+    "pie": {
+        "itemStyle": {
+            "normal": {
+                "borderWidth": 0,
+                "borderColor": "#ccc"
             },
-            splitLine: {
-                lineStyle: {
-                    color: ['#eee']
-                }
-            }
-        },
-
-        valueAxis: {
-            axisLine: {
-                lineStyle: {
-                    color: '#008acd'
-                }
-            },
-            splitArea : {
-                show : true,
-                areaStyle : {
-                    color: ['rgba(250,250,250,0.1)','rgba(200,200,200,0.1)']
-                }
-            },
-            splitLine: {
-                lineStyle: {
-                    color: ['#eee']
-                }
-            }
-        },
-
-        timeline : {
-            lineStyle : {
-                color : '#008acd'
-            },
-            controlStyle : {
-                normal : { color : '#008acd'},
-                emphasis : { color : '#008acd'}
-            },
-            symbol : 'emptyCircle',
-            symbolSize : 3
-        },
-
-        line: {
-            smooth : true,
-            symbol: 'emptyCircle',
-            symbolSize: 3
-        },
-
-        candlestick: {
-            itemStyle: {
-                normal: {
-                    color: '#d87a80',
-                    color0: '#2ec7c9',
-                    lineStyle: {
-                        color: '#d87a80',
-                        color0: '#2ec7c9'
-                    }
-                }
-            }
-        },
-
-        scatter: {
-            symbol: 'circle',
-            symbolSize: 4
-        },
-
-        map: {
-            label: {
-                normal: {
-                    textStyle: {
-                        color: '#d87a80'
-                    }
-                }
-            },
-            itemStyle: {
-                normal: {
-                    borderColor: '#eee',
-                    areaColor: '#ddd'
-                },
-                emphasis: {
-                    areaColor: '#fe994e'
-                }
-            }
-        },
-
-        graph: {
-            color: colorPalette
-        },
-
-        gauge : {
-            axisLine: {
-                lineStyle: {
-                    color: [[0.2, '#2ec7c9'],[0.8, '#5ab1ef'],[1, '#d87a80']],
-                    width: 10
-                }
-            },
-            axisTick: {
-                splitNumber: 10,
-                length :15,
-                lineStyle: {
-                    color: 'auto'
-                }
-            },
-            splitLine: {
-                length :22,
-                lineStyle: {
-                    color: 'auto'
-                }
-            },
-            pointer : {
-                width : 5
+            "emphasis": {
+                "borderWidth": 0,
+                "borderColor": "#ccc"
             }
         }
-    };
-
-    echarts.registerTheme('macarons', theme);
-}));
+    },
+    "categoryAxis": {
+        "axisLine": {
+            "show": true,
+            "lineStyle": {
+                "color": "#f1f3f5"
+            }
+        },
+        "axisTick": {
+            "show": true,
+            "lineStyle": {
+                "color": "#f1f3f5"
+            }
+        },
+        "axisLabel": {
+            "show": true,
+            "textStyle": {
+                "color": "#999999",
+                "fontSize": "14"
+            }
+        },
+        "splitLine": {
+            "show": true,
+            "lineStyle": {
+                "color": [
+                    "#f1f3f5"
+                ]
+            }
+        },
+        "splitArea": {
+            "show": false,
+            "areaStyle": {
+                "color": [
+                    "rgba(250,250,250,0.3)",
+                    "rgba(200,200,200,0.3)"
+                ]
+            }
+        }
+    },
+    "valueAxis": {
+        "axisLine": {
+            "show": true,
+            "lineStyle": {
+                "color": "#f1f3f5"
+            }
+        },
+        "axisTick": {
+            "show": true,
+            "lineStyle": {
+                "color": "#f1f3f5"
+            }
+        },
+        "axisLabel": {
+            "show": true,
+            "textStyle": {
+                "color": "#999999",
+                "fontSize": "14"
+            }
+        },
+        "splitLine": {
+            "show": true,
+            "lineStyle": {
+                "color": [
+                    "#f1f3f5"
+                ]
+            }
+        },
+        "splitArea": {
+            "show": false,
+            "areaStyle": {
+                "color": [
+                    "rgba(250,250,250,0.3)",
+                    "rgba(200,200,200,0.3)"
+                ]
+            }
+        }
+    },
+    "toolbox": {
+        "iconStyle": {
+            "normal": {
+                "borderColor": "#999999"
+            },
+            "emphasis": {
+                "borderColor": "#666666"
+            }
+        }
+    },
+    "legend": {
+        "textStyle": {
+            "color": "#333333"
+        }
+    },
+    "tooltip": {
+        "axisPointer": {
+            "lineStyle": {
+                "color": "#cccccc",
+                "width": 1
+            },
+            "crossStyle": {
+                "color": "#cccccc",
+                "width": 1
+            }
+        }
+    },
+    "timeline": {
+        "lineStyle": {
+            "color": "#293c55",
+            "width": 1
+        },
+        "itemStyle": {
+            "normal": {
+                "color": "#293c55",
+                "borderWidth": 1
+            },
+            "emphasis": {
+                "color": "#a9334c"
+            }
+        },
+        "controlStyle": {
+            "normal": {
+                "color": "#293c55",
+                "borderColor": "#293c55",
+                "borderWidth": 0.5
+            },
+            "emphasis": {
+                "color": "#293c55",
+                "borderColor": "#293c55",
+                "borderWidth": 0.5
+            }
+        },
+        "checkpointStyle": {
+            "color": "#e43c59",
+            "borderColor": "rgba(194,53,49,0.5)"
+        },
+        "label": {
+            "normal": {
+                "textStyle": {
+                    "color": "#293c55"
+                }
+            },
+            "emphasis": {
+                "textStyle": {
+                    "color": "#293c55"
+                }
+            }
+        }
+    },
+    "markPoint": {
+        "label": {
+            "normal": {
+                "textStyle": {
+                    "color": "#ffffff"
+                }
+            },
+            "emphasis": {
+                "textStyle": {
+                    "color": "#ffffff"
+                }
+            }
+        }
+    }
+}
